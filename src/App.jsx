@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import  "./index.css";
 import WelcomePage from "./page/static";
@@ -11,7 +11,7 @@ import LeftSideBar from "./components/nav/left-sidebar";
 
 function Landing(){
   return(
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
     <LandingHeader/>
     <main className="flex-1">
     <LandingPage/>  
@@ -36,11 +36,14 @@ function AttendanceSheet(){
 
 function App() {
   return (
-      <Routes>
-        <Route path="/" element={<WelcomePage />} />
-        <Route path="/landing" element={<Landing />} />
-        <Route path="/attendance" element={<AttendanceSheet />} />
-      </Routes>    
+    <HashRouter>
+        <Routes>
+          <Route path="/" element={<WelcomePage />} />
+          <Route path="/landing" element={<Landing />} />
+          <Route path="/attendance" element={<AttendanceSheet />} />
+      </Routes>
+    </HashRouter>
+        
   );
 }
 

@@ -1,7 +1,3 @@
-// export{
-//     default as logoIcon
-// }from "./icon.png"; 
-
 import logoIcon from "./icon.png";
 import attendance from "./attendance.png";
 import confidence from "./confidence.png";

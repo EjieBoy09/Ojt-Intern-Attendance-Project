@@ -85,8 +85,10 @@ function LandingPage(){
       
         <button 
           onClick={() => navigate("/attendance")} 
-          className="duration-700 delay-300 ease-out mt-5 bg-gradient-to-r from-[#134E5E] to-[#6eb37e] hover:from-[#114655] hover:to-[#65ad76] text-white rounded-xl px-6 py-3 text-3xl
-          hover:cursor-pointer border-1 border-gray-700">
+          className="duration-700 delay-300 ease-out mt-5 
+          bg-gradient-to-r from-[#134E5E] to-[#6eb37e] hover:from-[#114655] hover:to-[#65ad76]
+          text-white rounded-xl px-6 py-8 text-xl
+          border-1 border-gray-700 hover:cursor-pointer">
           Start Attendance
         </button>
 
