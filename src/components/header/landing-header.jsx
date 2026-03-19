@@ -6,6 +6,15 @@ function LandingHeader() {
     const navigate = useNavigate();
     const [menuOpen, setMenuOpen] = useState(false);
 
+    const scrollToSection = (sectionId) => {
+    const el = document.getElementById(sectionId);
+        if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+        } else {
+            navigate("/landing", { state: { scrollTo: sectionId } });
+        }
+    };
+
     const navLinks = [
         { label: "Home", section: "Home", href: "#Home" },
         { label: "About", section: "About", href: "#faqs" },
@@ -19,10 +28,10 @@ function LandingHeader() {
 
                 {/* Left: Logo + Title */}
                 <div className="flex items-center gap-1">
-                    <a onClick={() => navigate("/landing", { state: { scrollTo: "Home" } })} href="#Home">
-                        <img src={logoIcon} alt="Image Icon" className="h-10 md:h-12 lg:h-12" />
-                    </a>
-                    <p className="text-lg xl:text-2xl font-bold text-[#115c66]">
+                        <a onClick={() => scrollToSection("Home")} href="#Home">
+                            <img src={logoIcon} alt="Image Icon" className="h-10 md:h-12 lg:h-12" />
+                         </a>
+                        <p className="text-lg xl:text-2xl font-bold text-[#115c66]">
                         Anti-Cheating <br className="hidden md:block lg:hidden" /> Attendance
                     </p>
                 </div>
@@ -32,7 +41,7 @@ function LandingHeader() {
                     {navLinks.map(({ label, section, href }) => (
                         <li key={label}>
                             <a 
-                                onClick={() => navigate("/landing", { state: { scrollTo: section } })}
+                                onClick={() => scrollToSection(section)}
                                 className="flex justify-center items-center
                                     h-8 w-24 md:w-18 lg:w-28 xl:w-32 md:h-10
                                     bg-gradient-to-r from-[#134E5E] to-[#71B280] hover:from-[#10414e] hover:to-[#6caf7b]
@@ -90,9 +99,10 @@ function LandingHeader() {
                         <li key={label}>
                             <a 
                                 onClick={() => {
-                                    navigate("/landing", { state: { scrollTo: section } });
+                                    scrollToSection(section);
                                     setMenuOpen(false);
                                 }}
+                                
                                 className="flex justify-center items-center h-10
                                     bg-gradient-to-r from-[#134E5E] to-[#71B280] hover:from-[#10414e] hover:to-[#6caf7b]
                                     text-gray-100 rounded-md text-sm

@@ -35,8 +35,7 @@ function WelcomePage() {
     )
     
     return(
-        <section className="flex items-center flex-col w-full min-h-screen overflow-x-hidden">  
-
+        <section className="flex items-center flex-col w-full min-h-screen overflow-x-hidden overflow-y-visible">
             <div className="flex justify-center flex-col items-center
                 w-full sm:max-w-150 md:max-w-150 lg:max-w-300 h-screen fade-in">
 
@@ -78,9 +77,9 @@ function WelcomePage() {
                 to manual logbooks and false check-ins. Our system uses real-time
 
                 <span className="relative group cursor-pointer"><b> geolocation</b>
-                    <img src={geolocation} alt="image" className="absolute top-1 -translate-x-14  
-                    w-24 h-15 object-contain opacity-0 group-hover:opacity-100 group-hover:-translate-x-21 
-                    transition-all duration-500 pointer-events-none"/>
+                    <img src={geolocation} alt="image" className="absolute top-7 left-1/3 -translate-x-1/2 
+                        w-50 h-20 object-contain opacity-0 -translate-y-5 group-hover:opacity-100 group-hover:translate-y-2 
+                        transition-all duration-500 pointer-events-none"/>
                 </span>{" "}
                 
                 to ensure every time-in and time-out is 
@@ -94,10 +93,10 @@ function WelcomePage() {
                 and       
 
                 <span className="relative group cursor-pointer"><b> verified</b> 
-                    <img src={verified} alt="image" className="absolute top-7 translate-x-20 
-                        w-25 h-20 object-contain opacity-0 group-hover:opacity-100 group-hover:translate-x-27 
+                    <img src={verified} alt="image" className="absolute top-7 left-1/3 -translate-x-1/2 
+                        w-50 h-20 object-contain opacity-0 -translate-y-5 group-hover:opacity-100 group-hover:translate-y-2 
                         transition-all duration-500 pointer-events-none"/> 
-                </span>{" "}.                
+                </span>{" "}.               
 
                 </p>
             </div>
